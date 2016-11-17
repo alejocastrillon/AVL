@@ -44,6 +44,9 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+/**
+ * Menu Principal
+ */
 void menuPrincipal() {
     int opc;
     printf("\t\t MENU PRINCIPAL ARBOLES \n");
@@ -56,6 +59,10 @@ void menuPrincipal() {
     opcMenuPrincipal(opc);
 }
 
+/**
+ * Selecciona el menu de acuerdo a la opcion ingresada en el menu principal
+ * @param op
+ */
 void opcMenuPrincipal(int op) {
     switch (op) {
         case 1:
@@ -72,6 +79,9 @@ void opcMenuPrincipal(int op) {
     }
 }
 
+/**
+ * Menu del Arbol Binario de Busqueda
+ */
 void menuABB() {
     int opc;
     printf("\t\t MENU ABB\n");
@@ -92,6 +102,10 @@ void menuABB() {
     opcMenuABB(opc);
 }
 
+/**
+ * Selecciona la funcion a ejecutar de acuerdo a la opcion ingresada en el menu de ABB
+ * @param op
+ */
 void opcMenuABB(int op) {
     switch (op) {
         case 12:
@@ -102,7 +116,9 @@ void opcMenuABB(int op) {
             break;
     }
 }
-
+ /**
+  * Funcion para salir de la ejecucion
+  */
 void exit() {
     printf("Hasta Luego\n");
 }
