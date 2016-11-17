@@ -34,6 +34,7 @@ void menuPrincipal();
 void opcMenuPrincipal(int op);
 void menuABB();
 void opcMenuABB(int op);
+void insertarABB(ABB &arb, int data);
 void exit();
 
 /*
@@ -108,6 +109,13 @@ void menuABB() {
  */
 void opcMenuABB(int op) {
     switch (op) {
+        int data;
+        case 1:
+            printf("Ingrese el dato a insertar en el arbol:\n");
+            scanf("%i", &data);
+            insertarABB(arbol, data);
+            menuABB();
+            break;
         case 12:
             break;
         default:
@@ -116,9 +124,38 @@ void opcMenuABB(int op) {
             break;
     }
 }
- /**
-  * Funcion para salir de la ejecucion
-  */
+
+/**
+ * Retorna un nuevo nodo para el arbol
+ * @param data
+ * @return 
+ */
+ABB crearNodo(int data) {
+    ABB newNodo = new (struct nodoArbol);
+    newNodo->nro = data;
+    newNodo->izq = NULL;
+    newNodo->der = NULL;
+    return newNodo;
+}
+
+/**
+ * Insertar en un arbol ABB
+ * @param arbol
+ * @param data
+ */
+void insertarABB(ABB &arb, int data) {
+    if (arbol == NULL) {
+        arb = crearNodo(data);
+    } else if (data < arb->nro) {
+        insertarABB(arb->izq, data);
+    } else {
+        insertarABB(arb->der, data);
+    }
+}
+
+/**
+ * Funcion para salir de la ejecucion
+ */
 void exit() {
     printf("Hasta Luego\n");
 }
