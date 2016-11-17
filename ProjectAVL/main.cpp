@@ -33,6 +33,8 @@ ABB arbol = NULL;
 void menuPrincipal();
 void opcMenuPrincipal(int op);
 void menuABB();
+void opcMenuABB(int op);
+void exit();
 
 /*
  * 
@@ -55,11 +57,14 @@ void menuPrincipal() {
 }
 
 void opcMenuPrincipal(int op) {
-    switch(op){
+    switch (op) {
         case 1:
-          menuABB();
-//          menuPrincipal();
-          break;
+            menuABB();
+            menuPrincipal();
+            break;
+        case 4:
+            exit();
+            break;
         default:
             printf("Ingrese una opcion acorde al menu\n");
             menuPrincipal();
@@ -67,7 +72,8 @@ void opcMenuPrincipal(int op) {
     }
 }
 
-void menuABB(){
+void menuABB() {
+    int opc;
     printf("\t\t MENU ABB\n");
     printf("Seleccione la opcion que desea realizar\n");
     printf("\t 1. Insertar dato en el arbol\n");
@@ -81,4 +87,22 @@ void menuABB(){
     printf("\t 9. Calcular el altura del arbol\n");
     printf("\t 10. Calcular la cantidad de hojas del arbol\n");
     printf("\t 11. Padre de un nodo\n");
+    printf("\t 12. Regresar al menu principal\n");
+    scanf("%i", &opc);
+    opcMenuABB(opc);
+}
+
+void opcMenuABB(int op) {
+    switch (op) {
+        case 12:
+            break;
+        default:
+            printf("Ingrese una opcion acorde al menu de ABB\n");
+            menuABB();
+            break;
+    }
+}
+
+void exit() {
+    printf("Hasta Luego\n");
 }
