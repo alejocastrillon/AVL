@@ -6,7 +6,7 @@
 
 /* 
  * File:   main.cpp
- * Author: alejandro
+ * Authors: Jairo Alejandro Castrillon Libreros and Edilson Londoño Castañeda
  *
  * Created on 16 de noviembre de 2016, 01:44 PM
  */
