@@ -41,6 +41,7 @@ void exit();
  * 
  */
 int main(int argc, char** argv) {
+    printf("jairo es puto");
     menuPrincipal();
     return 0;
 }
